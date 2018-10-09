@@ -17,17 +17,6 @@ case class Player(pseudo: String = "Anonymous", u: UserBoard = Battleships.creat
 
   def attacksBoard(): AttacksBoard = _attacksBoard
 
-  def numberShipsDestroyedBy(attackingPlayer: Player): Int = {
-    var cpt = 0
-
-    for (eachSetOfKey <- userBoard().ships().keySet) if (eachSetOfKey.forall(cell => {
-      attackingPlayer.attacksBoard().alreadyHit(cell)
-    })) {
-      cpt = cpt + 1
-    }
-    cpt
-  }
-
   def askForShot(): Cell = {
     Cell(charToInt(readerCoordChar()), readerCoordInt() - 1)
   }

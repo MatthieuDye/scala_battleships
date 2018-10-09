@@ -4,6 +4,12 @@ import scala.util.Random
 import scala.io.StdIn.readLine
 import scala.sys.process._
 
+
+object Direction extends Enumeration {
+  type Direction = Value
+  val HORIZONTAL, VERTICAL = Value
+}
+
 object BattleshipsUtils {
 
   def clear(): Int = "clear".!
